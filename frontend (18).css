@@ -1,0 +1,286 @@
+/**
+ * Upcoming Movies Feature - Frontend Styles (BULLETPROOF FINAL)
+ * This version uses highly specific selectors to override theme styles.
+ */
+
+/* --- CSS Variables --- */
+:root {
+    --primary-color: #2563eb;
+    --text-primary: #1e293b;
+    --background-primary: #ffffff;
+    --background-secondary: #f8fafc;
+    --border-color: #e2e8f0;
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --radius-lg: 0.75rem;
+    --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+.entry-title {
+    text-align: center;
+}
+
+/* --- Base Layout --- */
+body.upcoming-movie-single .site-main {
+    padding: 2rem 0;
+}
+
+body.upcoming-movie-single article {
+    max-width: 1200px;
+    margin: 0 auto 3rem !important;
+    padding: 0 2rem;
+    color: var(--text-primary);
+}
+
+body.upcoming-movie-single .entry-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+body.upcoming-movie-single .entry-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-primary) !important;
+}
+
+body.upcoming-movie-single .entry-content:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* --- Typography --- */
+body.upcoming-movie-single .entry-content h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 3rem 0 1.5rem;
+    padding-bottom: 0.75rem;
+    position: relative;
+    color: var(--text-primary) !important;
+}
+
+body.upcoming-movie-single .entry-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 4px;
+    background: var(--gradient-primary);
+}
+
+body.upcoming-movie-single .entry-content h3 {
+    font-size: clamp(1.25rem, 3vw, 1.875rem);
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    color: var(--text-primary) !important;
+}
+
+/* --- *** IMAGE & FIGURE FIX *** --- */
+body.upcoming-movie-single .entry-content figure.wp-block-image {
+    max-width: 720px !important;
+    margin: 2.5rem auto !important;
+    float: none !important;
+    background: var(--background-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+body.upcoming-movie-single .entry-content figure.wp-block-image img {
+    width: 100% !important;
+    height: auto !important;
+    max-height: 500px !important;
+    margin: 0 !important;
+    display: block !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+/* --- *** TMDB ATTRIBUTION FIX *** --- */
+body.upcoming-movie-single .entry-content .tmdb-attribution-block .wp-block-media-text__media {
+    max-width: 150px !important;
+    margin-right: 2rem !important;
+}
+
+body.upcoming-movie-single .entry-content .tmdb-attribution-block .tmdb-logo {
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* --- Video Embed --- */
+body.upcoming-movie-single .entry-content .wp-block-embed {
+    max-width: 800px !important;
+    margin: 3rem auto !important;
+    box-shadow: var(--shadow-md);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    body.upcoming-movie-single article {
+        padding: 0 1rem;
+    }
+    body.upcoming-movie-single .entry-content figure.wp-block-image {
+        max-width: 100% !important;
+    }
+}
+
+/*
+==========================================================================
+  MISSING STYLES FOR CUSTOM TEMPLATE SECTIONS
+  (Copied from old template and updated with CSS variables)
+==========================================================================
+*/
+
+/* --- Featured Image --- */
+body.upcoming-movie-single .movie-featured-image {
+    text-align: center;
+    margin: 2rem 0 3rem 0;
+}
+
+body.upcoming-movie-single .movie-featured-image img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    object-fit: cover;
+}
+
+/* --- Release Info in Header --- */
+body.upcoming-movie-single .movie-release-info {
+    font-size: 1.1rem;
+    color: #6b7280; /* Using a specific color as it's not in the variables */
+    margin: 0.5rem 0 0;
+    font-weight: 500;
+}
+
+
+/* --- Trailer Section --- */
+body.upcoming-movie-single .movie-trailer-section {
+    margin: 4rem auto 3rem;
+    text-align: center;
+    max-width: 900px;
+}
+
+body.upcoming-movie-single .trailer-heading {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--text-primary);
+    margin: 0 0 2rem 0;
+    font-weight: 700;
+}
+
+body.upcoming-movie-single .trailer-video-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+body.upcoming-movie-single .trailer-embed-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 1rem; /* 16px */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+body.upcoming-movie-single .trailer-embed-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+
+/* --- Movie Details Section --- */
+body.upcoming-movie-single .movie-details-section {
+    margin: 4rem auto 3rem;
+    padding: 2rem;
+    background: var(--background-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    max-width: 700px;
+}
+
+body.upcoming-movie-single .movie-details-section h3 {
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+}
+
+body.upcoming-movie-single .movie-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+body.upcoming-movie-single .detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: var(--background-primary);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+body.upcoming-movie-single .detail-label {
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+body.upcoming-movie-single .detail-value {
+    font-size: 1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+body.upcoming-movie-single .platform-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+body.upcoming-movie-single .platform-logo-small {
+    height: 18px;
+    width: auto;
+    max-width: 60px;
+    object-fit: contain;
+}
+
+/* --- TMDB Attribution Footer --- */
+body.upcoming-movie-single .tmdb-attribution-footer {
+    margin: 3rem auto 2rem;
+    padding: 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    max-width: 400px;
+}
+
+body.upcoming-movie-single .tmdb-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+body.upcoming-movie-single .tmdb-logo-tiny {
+    height: 16px;
+    width: auto;
+    opacity: 0.8;
+}
+
+body.upcoming-movie-single .tmdb-text {
+    font-size: 0.8rem;
+    color: #6b7280;
+    font-weight: 500;
+}
